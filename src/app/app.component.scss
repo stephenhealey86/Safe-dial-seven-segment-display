@@ -1,0 +1,16 @@
+.main {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    div {
+        display: grid;
+        height: 100%;
+        grid-template-columns: auto auto;
+        grid-template-rows: 1fr;
+        align-items: center;
+        justify-content: center;
+        column-gap: 5px;
+    }
+}

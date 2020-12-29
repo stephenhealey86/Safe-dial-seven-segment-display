@@ -1,0 +1,14 @@
+.seven-segment-display {
+    
+    svg {
+        width: 100px;
+        height: 200px;
+
+        .on {
+            fill: #F00;
+        }
+        .off {
+            fill: #500000AA
+        }
+    }
+}
