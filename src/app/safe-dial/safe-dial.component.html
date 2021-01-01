@@ -1,0 +1,36 @@
+<div class="safe-dial">
+    <svg viewBox="0 0 100 100">
+        <defs>
+            <radialGradient id="grad-dial" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+              <stop offset="95%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+              <stop offset="100%" style="stop-color:rgb(100,100,100);stop-opacity:1" />
+            </radialGradient>
+            <radialGradient id="grad-knob" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+                <stop offset="90%" style="stop-color:rgb(0,0,0);stop-opacity:1" />
+                <stop offset="100%" style="stop-color:rgb(50,50,50);stop-opacity:1" />
+              </radialGradient>
+          </defs>
+
+          <g>
+              <circle cx="50" cy="50" r="45" fill="url(#grad-dial)" />
+              <circle cx="50" cy="50" r="40.5" fill="#252525" />
+
+              <g #dial (mousedown)="mousedown($event)" (mouseup)="referenceAngle = undefined" (mousemove)="mousemove($event)"
+                    (mouseleave)="referenceAngle = undefined" transform-origin="50px 50px" [class]="referenceAngle === undefined ? 'grab' : 'grabbed'">
+                  <!-- dial -->
+                <circle cx="50" cy="50" r="40" fill="#000" />
+
+                <g #knob>
+                  <circle cx="50" cy="50" r="20" fill="url(#grad-knob)" />
+                </g>
+              </g>
+
+              <!-- mark -->
+            <g>
+                <line x1="50" x2="50" y1="7" y2="9" stroke="#FFF" stroke-width="0.5" />
+                <line x1="49.5" x2="49.5" y1="7" y2="8.5" stroke="#FFF" stroke-width="0.5" transform-origin="49.5px 9px" style="transform: rotate(-45deg)" />
+                <line x1="50.5" x2="50.5" y1="7" y2="8.5" stroke="#FFF" stroke-width="0.5" transform-origin="50.5px 9px" style="transform: rotate(45deg)" />
+            </g>
+          </g>
+    </svg>
+</div>

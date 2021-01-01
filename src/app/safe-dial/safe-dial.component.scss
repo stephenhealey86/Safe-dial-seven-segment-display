@@ -1,0 +1,19 @@
+.safe-dial {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    svg {
+        width: 400px;
+        height: 400px;
+
+        .grab {
+            cursor: grab;
+        }
+        .grabbed {
+            cursor: grabbing;
+        }
+    }
+}
